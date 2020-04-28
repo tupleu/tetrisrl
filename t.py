@@ -9,7 +9,6 @@ from stable_baselines import DQN
 import pygame
 
 from stable_baselines.deepq.policies import FeedForwardPolicy
-from stable_baselines.gail import ExpertDataset
 
 
 class TetrisPolicy(FeedForwardPolicy):

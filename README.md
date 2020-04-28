@@ -1,5 +1,8 @@
 # tetrisrl
  Tetris built in Python for reinforcement learning
+
+![tetris gif](tetrisrl.gif)
+
 ## Installation
 Install the required packages listed in [requirements.txt](requirements.txt)
 ## Description
