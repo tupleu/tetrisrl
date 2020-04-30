@@ -280,6 +280,10 @@ class Tetris:
         else:
             self.current_piece = Tetromino(3,2,0,self.held_piece.t)
             self.held_piece = tetromino.__copy__()
+            if self.collide(self.current_piece):
+                self.current_piece.y-=1
+                if self.collide(self.current_piece):
+                    self.game_over = True
         
     def rotate(self, tetromino, r):
         temp = tetromino.__copy__()

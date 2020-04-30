@@ -35,16 +35,12 @@ class TetrisEnv(gym.Env):
 
         reward = score2-score1
 
-        current_board = self.game.get_board()
-        flag = False
+        current_board = self.game.get_board() 
         for board in self.game.board_list:
             if np.array_equal(np.array(current_board),np.array(board)):
-                flag = True
+                self.action_list[3](self.game.current_piece)#move down if repeated
                 break
-        if(flag):
-            reward -= 10
-        else:
-            self.game.board_list.append(self.game.get_board())
+        self.game.board_list.append(self.game.get_board())
         
         done = self.game.game_over or score2 > 5000
         if(not hasattr(self.game, 'held_piece')):
